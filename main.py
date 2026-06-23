@@ -35,9 +35,8 @@ chart = alt.Chart(df).mark_circle(size=50, opacity=0.7).encode(
     title='QS World University Rankings 2027: Rank vs. Score'
 ).interactive()
 
-output_file = "scatter_plot.html"
+output_file = "index.html"
 chart.save(output_file)
-print(f"Scatter plot saved as {output_file}")
 webbrowser.open('file://'+ os.path.realpath(output_file))
 
 
