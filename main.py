@@ -37,7 +37,7 @@ chart = alt.Chart(df).mark_circle(size=50, opacity=0.7).encode(
     ),
     y=alt.Y(
         'overall_score_clean:Q', 
-        title='Overall Score (University 601+ defaults to 0)'
+        title='Overall Score'
     ),
     color=alt.Color('region:N', title='Global Region', scale=alt.Scale(scheme='category10')),
     
