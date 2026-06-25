@@ -1,6 +1,8 @@
+DROP TABLE IF EXISTS universities;
+
 CREATE TABLE universities(
-    rank_2027 INTEGER,
-    rank_2026 INTEGER,
+    rank_2027 TEXT,
+    rank_2026 TEXT,
 
     university_name TEXT,
     country TEXT,
