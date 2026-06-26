@@ -4,4 +4,4 @@ psycopg2-binary
 openpyxl 
 altair
 python-dotenv
-gardio
+gradio
