@@ -85,4 +85,6 @@ with gr.Blocks(title="QS World University Rankings 2027") as demo:
     demo.load(fn=update_chart, inputs=[search_box, region_dropdown], outputs=plot_output)
 
 if __name__ == "__main__":
-    demo.launch()
+    import os
+    port=int(os.environ.get("PORT", 7860))
+    demo.launch(server_name="0.0.0.0", server_port=port)
