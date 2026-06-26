@@ -1,9 +1,10 @@
+import os
+from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy import create_engine
 
-engine = create_engine(
-    "postgresql+psycopg2://arpanshrestha:@localhost:5432/qs_rankings"
-)   
+load_dotenv()
+engine = create_engine(os.getenv("DATABASE_URL"))   
 query = """
 SELECT
     rank_2027,

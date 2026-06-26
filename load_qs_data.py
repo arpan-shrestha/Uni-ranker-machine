@@ -1,6 +1,15 @@
 #column renaming and data insertion into postgresql database
+import os
+from dotenv import load_dotenv
+from sqlalchemy import create_engine, text
 import pandas as pd
 import numpy as np
+
+
+
+load_dotenv()
+
+
 df = pd.read_excel("2027 QS World University Rankings 1.1 (For qs.com).xlsx", header = 1)
 df.columns = [
     "index",
@@ -57,10 +66,7 @@ print("Dataframe created successfully!!!")
 
 
 #connection
-from sqlalchemy import create_engine, text
-engine = create_engine(
-    "postgresql+psycopg2://arpanshrestha:@localhost:5432/qs_rankings"
-)
+engine = create_engine(os.getenv("DATABASE_URL"))
 with engine.begin() as conn:
     conn.execute(text("TRUNCATE TABLE universities;"))
 
