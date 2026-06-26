@@ -52,7 +52,7 @@ def update_chart(search_query, selected_region):
                 alt.Tooltip("ar_score:Q", title="Academic Reputation Score"),
                 alt.Tooltip("er_score:Q", title="Employer Reputation Score")
             ],
-        ).properties(width="100%", height=500)
+        ).properties(width=900, height=500)
         .interactive()
         )
     return chart
