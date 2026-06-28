@@ -18,6 +18,7 @@ is_band=df["rank_2027"].astype(str).str.contains("-")
 np.random.seed(42)
 df["rank_jittered"]=df["rank_numeric"].astype(float)
 df.loc[is_band,"rank_jittered"] += np.random.uniform(0,15, size=is_band.sum())
+df.loc[~is_band, "rank_jittered"] += np.random.uniform(-0.4,0.4, size=(~is_band).sum())
 
 def update_chart(search_query, selected_region):
     filtered_df = df.copy()
